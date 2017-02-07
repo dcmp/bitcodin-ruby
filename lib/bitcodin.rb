@@ -3,6 +3,7 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest-client'
 
 require 'bitcodin/input/http_input_config'
+require 'bitcodin/input/s3_input_config'
 require 'bitcodin/output/output_type'
 require 'bitcodin/output/s3_region'
 require 'bitcodin/output/s3_output_config'
