@@ -56,6 +56,12 @@ module Bitcodin
       return @httpClient.sendRequest('post', url, inputConfig.values)
     end
 
+    # Create a new Input, which will be analyzed and used for transcoding jobs.
+    def createInputAsync(inputConfig)
+      url = @apiURL.concat('input/createasync')
+      return @httpClient.sendRequest('post', url, inputConfig.values)
+    end
+
     # An existing input will be analyzed again and a new thumbnail will be created.
     def analyzeInput(id)
       url = @apiURL.concat('input/').concat(id.to_s).concat('/analyze')
@@ -74,6 +80,11 @@ module Bitcodin
 
     def getInputDetails(id)
       url = @apiURL.concat('input/').concat(id.to_s)
+      return @httpClient.sendRequest('get', url)
+    end
+
+    def getAsyncInputStatus(id)
+      url = @apiURL.concat('input/').concat(id.to_s).concat("/asyncstatus")
       return @httpClient.sendRequest('get', url)
     end
 
