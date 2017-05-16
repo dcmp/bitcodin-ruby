@@ -4,6 +4,7 @@ module Bitcodin
     def initialize(inputId, encodingProfileId, manifestTypes, speed=nil, drmConfig=nil, hlsEncryptionConfig=nil, audioMetaDataConfigs=nil, location=nil, videoMetaData=nil, extractClosedCaptions=nil)
       @values = '{'
       @values += '"inputId": ' + inputId.to_s + ','
+      @values += '"deinterlace": true,'
       @values += '"encodingProfileId": ' + encodingProfileId.to_s + ','
       @values += '"manifestTypes": ' + manifestTypes.to_s + ''
       unless speed.nil?
