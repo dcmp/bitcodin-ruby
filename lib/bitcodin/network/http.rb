@@ -62,7 +62,7 @@ module Bitcodin
       # puts url
       # puts value
       begin
-        response = unsafe_post url, value, @headers
+        response = unsafe_post url, value, @headers, &block
         return response
       rescue Exception => e
         puts e.message
