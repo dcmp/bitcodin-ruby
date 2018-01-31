@@ -93,24 +93,24 @@ module Bitcodin
       end
     end
 
-    def unsafe_get(url, &block)
+    def unsafe_get(url, headers, &block)
     	puts "calling unsafe get"
-    	RestClient::Request.execute(method: :get, url: url, headers: @headers, verify_ssl: false, &block)
+    	RestClient::Request.execute(method: :get, url: url, headers: headers, verify_ssl: false, &block)
     end
 
-    def unsafe_patch(url, &block)
+    def unsafe_patch(url, headers, &block)
     	puts "calling unsafe patch"
-    	RestClient::Request.execute(method: :patch, url: url, headers: @headers, verify_ssl: false, &block)
+    	RestClient::Request.execute(method: :patch, url: url, headers: headers, verify_ssl: false, &block)
     end
 
-    def unsafe_delete(url, &block)
+    def unsafe_delete(url, headers, &block)
     	puts "calling unsafe delete"
-    	RestClient::Request.execute(method: :delete, url: url, headers: @headers, verify_ssl: false, &block)
+    	RestClient::Request.execute(method: :delete, url: url, headers: headers, verify_ssl: false, &block)
     end
 
-    def unsafe_post(url, value)
+    def unsafe_post(url, headers, value)
     	puts "calling unsafe post"
-    	RestClient::Request.execute(method: :post, url: url, headers: @headers, verify_ssl: false, payload: value, &block)
+    	RestClient::Request.execute(method: :post, url: url, headers: headers, verify_ssl: false, payload: value, &block)
     end
 
   end
