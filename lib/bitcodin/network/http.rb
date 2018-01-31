@@ -86,18 +86,22 @@ module Bitcodin
     end
 
     def unsafe_get(url)
+    	puts "calling unsafe get"
     	RestClient::Request.execute(method: :get, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
     def unsafe_patch(url)
+    	puts "calling unsafe patch"
     	RestClient::Request.execute(method: :patch, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
     def unsafe_delete(url)
+    	puts "calling unsafe delete"
     	RestClient::Request.execute(method: :delete, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
     def unsafe_post(url, value)
+    	puts "calling unsafe post"
     	RestClient::Request.execute(method: :post, url: url, headers: @headers, verify_ssl: false, payload: value, &block)
     end
 
