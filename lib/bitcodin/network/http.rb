@@ -35,7 +35,7 @@ module Bitcodin
       # puts 'Get'
       # puts url
       begin
-        response = RestClient.get url, @headers
+        response = unsafe_get url, @headers
         return response
       rescue Exception => e
         puts e.message
@@ -48,7 +48,7 @@ module Bitcodin
       # puts 'Patch'
       # puts url
       begin
-        response = RestClient.patch url, @headers
+        response = unsafe_patch url, @headers
         return response
       rescue Exception => e
         puts e.message
@@ -62,7 +62,7 @@ module Bitcodin
       # puts url
       # puts value
       begin
-        response = RestClient.post url, value, @headers
+        response = unsafe_post url, value, @headers
         return response
       rescue Exception => e
         puts e.message
@@ -76,7 +76,7 @@ module Bitcodin
       # puts 'Delete'
       # puts url
       begin
-        response = RestClient.delete url, @headers
+        response = unsafe_delete url, @headers
         return response
       rescue Exception => e
         puts e.message
