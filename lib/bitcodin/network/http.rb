@@ -108,7 +108,7 @@ module Bitcodin
     	RestClient::Request.execute(method: :delete, url: url, headers: headers, verify_ssl: false, &block)
     end
 
-    def unsafe_post(url, headers, value, &block)
+    def unsafe_post(url, value, headers, &block)
     	puts "calling unsafe post"
     	RestClient::Request.execute(method: :post, url: url, headers: headers, verify_ssl: false, payload: value, &block)
     end
