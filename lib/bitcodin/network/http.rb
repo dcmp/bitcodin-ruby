@@ -19,6 +19,10 @@ module Bitcodin
     end
 
     def sendRequest(method, url, values = nil)
+    	puts "DEBUG:::: I GOT IN HERE  #{method}    #{url}"
+    	puts "values"
+    	puts values
+
       case method
         when 'get'
           callResourceGet(url)
@@ -32,6 +36,7 @@ module Bitcodin
     end
 
     def callResourceGet(url)
+    	puts "in the get"
       # puts 'Get'
       # puts url
       begin
@@ -45,6 +50,7 @@ module Bitcodin
     end
 
     def callResourcePatch(url)
+    	puts "in the patch"
       # puts 'Patch'
       # puts url
       begin
@@ -58,6 +64,7 @@ module Bitcodin
     end
 
     def callResourcePost(url, value)
+    	puts "in the post"
       # puts 'Post'
       # puts url
       # puts value
@@ -73,6 +80,7 @@ module Bitcodin
     end
 
     def callResourceDelete(url)
+    	puts "in the delete"
       # puts 'Delete'
       # puts url
       begin
