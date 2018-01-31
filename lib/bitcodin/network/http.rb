@@ -62,7 +62,7 @@ module Bitcodin
       # puts url
       # puts value
       begin
-        response = unsafe_post url, value, @headers, &block
+        response = unsafe_post url, value, @headers
         return response
       rescue Exception => e
         puts e.message
@@ -85,22 +85,22 @@ module Bitcodin
       end
     end
 
-    def unsafe_get(url)
+    def unsafe_get(url, &block)
     	puts "calling unsafe get"
     	RestClient::Request.execute(method: :get, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
-    def unsafe_patch(url)
+    def unsafe_patch(url, &block)
     	puts "calling unsafe patch"
     	RestClient::Request.execute(method: :patch, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
-    def unsafe_delete(url)
+    def unsafe_delete(url, &block)
     	puts "calling unsafe delete"
     	RestClient::Request.execute(method: :delete, url: url, headers: @headers, verify_ssl: false, &block)
     end
 
-    def unsafe_post(url, value)
+    def unsafe_post(url, value, &block)
     	puts "calling unsafe post"
     	RestClient::Request.execute(method: :post, url: url, headers: @headers, verify_ssl: false, payload: value, &block)
     end
